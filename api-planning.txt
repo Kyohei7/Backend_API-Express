@@ -1,0 +1,75 @@
+Standart API
+
+{root.api}/{grouping}/{endpoint}
+Sample :
+http://human-resource.com/developer
+
+Standart Status Response
+200 - OK                        -->     Call API Success
+201 - CREATED                   -->     Post Success
+400 - BAD REQUEST               -->     Error on Client Side
+401 - UNAUTHORIZED              -->     User not authorized to the REQUEST
+403 - FORBIDDEN                 -->     User not allowed to acceess
+404 - NOT FOUND                 -->     Request Endpoint Not Found
+500 - INTERNAL SERVER ERROR     -->     Error on Server Side
+502 - BAD GATEWAY               -->     Invalid Response From Another Request
+
+
+GROUP               :   Authentication
+
+[1] -  Register     -> {root.api}/developer/auth/register
+                    -> {root.api}/company/auth/register
+
+req: {
+    "name"      : "Testing",
+    "email"     : "test@gmail.com",
+    "password"  : "1234"
+}
+
+res: {
+    "message"   : "Register Success",
+    "data"      : {
+        "id"        : 1,
+        "name"      : "Testing",
+        "email"     : "test@gmail.com",
+        "password"  : "1234"
+    }
+}
+
+err: {
+
+}
+
+[2] -  Login    -> {root.api}/developer/auth/login
+                -> {root.api}/company/auth/login
+
+
+GROUP   : DEVELOPER
+
+[1]     -   Create Data Developer                                   -> Done
+[2]     -   Read Data Developer                                     -> Done
+[3]     -   Update Data Developer                                   -> Done
+[4]     -   Delete Data Developer                                   -> Done
+[5]     -   Search Data Developer by Name & Skill                   -> Done
+[6]     -   Sort Data Developer by Name, Skill, Location            -> Done
+
+GROUP   : COMPANY
+
+[1]     -   Create Data Company
+[2]     -   Read Data Company
+[3]     -   Update Data Company
+[4]     -   Delete Data Company
+
+GROUP   : PROJECT
+
+[1]     -   Create Data Project
+[2]     -   Read Data Project
+[3]     -   Update Data Project
+[4]     -   Delete Data Project
+
+GROUP   : PROJECT_DEVELOPER
+
+[1]     -   Create Data Project Developer
+[2]     -   Read Data Project Developer
+[3]     -   Update Data Project Developer
+[4]     -   Delete Data Project Developer

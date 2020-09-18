@@ -80,10 +80,62 @@ function deleteDeveloper(req, res) {
     })
 }
 
+// Read Data by Name
+function readDeveloperByName(req, res) {
+    model.Developer.findAll({
+        where: {
+            name: req.params.name
+        }
+    })
+    .then( function(result) {
+        res.send('Success to Get Data by Name')
+    })
+    .catch( function(error) {
+        res.json({error: error})
+    })
+}
+
+// Read Data by Skill
+function readDeveloperBySkill(req, res) {
+    model.Developer.findAll({
+        where: {
+            skill: req.params.skill
+        }
+    })
+    .then( function(result) {
+        res.send('Success to Get Data by skill')
+    })
+    .catch( function(error) {
+        res.json({error: error})
+    })
+}
+
+// Read Data with Sort by Request
+function sortDeveloperByRequest(req, res) {
+    model.Developer.findAll({
+        where: {
+            name: req.params.name
+        },
+        order: [
+            ['name', 'DESC']
+        ],
+        attributes: ['name']
+    })
+    .then( function(result) {
+        res.send('Success to Sort Data by Name')
+    })
+    .catch( function(error) {
+        res.json({error: error})
+    })
+}
+
 
 module.exports = {
     createDeveloper,
     readDeveloper,
     updateDeveloper,
     deleteDeveloper,
+    readDeveloperByName,
+    readDeveloperBySkill,
+    sortDeveloperByRequest,
 }
