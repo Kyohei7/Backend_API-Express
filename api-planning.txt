@@ -55,17 +55,17 @@ GROUP   : DEVELOPER
 
 GROUP   : COMPANY
 
-[1]     -   Create Data Company
-[2]     -   Read Data Company
-[3]     -   Update Data Company
-[4]     -   Delete Data Company
+[1]     -   Create Data Company         -> Done                                     
+[2]     -   Read Data Company           -> Done
+[3]     -   Update Data Company         -> Done
+[4]     -   Delete Data Company         -> Done
 
 GROUP   : PROJECT
 
-[1]     -   Create Data Project
-[2]     -   Read Data Project
-[3]     -   Update Data Project
-[4]     -   Delete Data Project
+[1]     -   Create Data Project         -> Done
+[2]     -   Read Data Project           -> Done
+[3]     -   Update Data Project         -> Done
+[4]     -   Delete Data Project         -> Done
 
 GROUP   : PROJECT_DEVELOPER
 
