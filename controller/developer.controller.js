@@ -164,16 +164,13 @@ function readDeveloperBySkill(req, res) {
     })
 }
 
-// Read Data with Sort by Request
-function sortDeveloperByRequest(req, res) {
+// Read Data with Sort by Name
+function sortDeveloperByName(req, res) {
     model.Developer.findAll({
-        where: {
-            name: req.params.name
-        },
         order: [
-            ['name', 'DESC']
+            ['name', 'ASC']
         ],
-        attributes: ['name']
+        attributes: ['name', 'photo', 'job', 'location', 'status', 'description', 'skill', 'email', 'instagram', 'github', 'gitlab', 'portfolio', 'experience']
     })
     .then( function(result) {
         res.send({
@@ -192,6 +189,31 @@ function sortDeveloperByRequest(req, res) {
     })
 }
 
+// Read Data with Sort by Skill
+function sortDeveloperBySkill(req, res) {
+    model.Developer.findAll({
+        order: [
+            ['skill', 'DESC']
+        ],
+        attributes: ['name', 'photo', 'job', 'location', 'status', 'description', 'skill', 'email', 'instagram', 'github', 'gitlab', 'portfolio', 'experience']
+    })
+    .then( function(result) {
+        res.send({
+            success: true,
+            message: 'Success Sort Data Developer by Skill',
+            data: result
+        })
+        res.status(201).res.json(result)
+    })
+    .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Sort Data Developer by Skill'
+        })
+        res.json({error: error})
+    })
+}
+
 
 module.exports = {
     createDeveloper,
@@ -200,5 +222,6 @@ module.exports = {
     deleteDeveloper,
     readDeveloperByName,
     readDeveloperBySkill,
-    sortDeveloperByRequest,
+    sortDeveloperByName,
+    sortDeveloperBySkill,
 }
