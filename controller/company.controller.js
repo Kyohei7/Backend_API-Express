@@ -12,10 +12,18 @@ function createCompany(req, res) {
         account: req.body.account
     })
     .then( function(result) {
-        res.send('Success Create Data Company')
-        res.json(result)
+        res.send({
+            success: true,
+            message: 'Success Post Data Company',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Post Data Company'
+        })
         res.json({error: error})
     })
 }
@@ -23,10 +31,18 @@ function createCompany(req, res) {
 function readCompany(req, res) {
     model.Company.findAll()
     .then( function(result) {
-        res.send('Success Get Data Company')
-        res.json(result)
+        res.send({
+            success: true,
+            message: 'Success Get Data Company',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Get Data Company'
+        })
         res.json({error: error})
     })
 }
@@ -47,10 +63,18 @@ function updateCompany(req, res) {
         }
     })
     .then( function(result) {
-        res.send('Success Update Data Company')
-        res.json(result)
+        res.send({
+            success: true,
+            message: 'Success Update Data Company',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Update Data Company'
+        })
         res.json({error: error})
     })
 }
@@ -62,10 +86,18 @@ function deleteCompany(req, res) {
         }
     })
     .then( function(result) {
-        res.send('Success Delete Data Company')
-        res.json(result)
+        res.send({
+            success: true,
+            message: 'Success Delete Data Company',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Delete Data Company'
+        })
         res.json({error: error})
     })
 }

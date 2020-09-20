@@ -18,9 +18,18 @@ function createDeveloper(req, res) {
         experience: req.body.experience
     })
     .then( function(result) {
-        res.json(result)
+        res.send({
+            success: true,
+            message: 'Sucess Create Data Developer',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Create Data Developer'
+        })
         res.json({error: error})
     })
 }
@@ -29,9 +38,18 @@ function createDeveloper(req, res) {
 function readDeveloper(req, res) {
     model.Developer.findAll()
     .then( function(result) {
+        res.send({
+            success: true,
+            message: 'Sucess Get Data Developer',
+            data: result
+        })
         res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Get Data Developer'
+        })
         res.json({error: error})
     })
 }
@@ -58,9 +76,18 @@ function updateDeveloper(req, res) {
         }
     })
     .then( function(result) {
-        res.send('Success to Update Data')
+        res.send({
+            success: true,
+            message: 'Success Update Data Developer',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Update Data Developer'
+        })
         res.json({error: error})
     })
 }
@@ -73,9 +100,18 @@ function deleteDeveloper(req, res) {
         }
     })
     .then( function(result) {
-        res.send('Success to Delete Data')
+        res.send({
+            success: true,
+            message: 'Success Delete Data Developer',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Delete Data Developer'
+        })
         res.json({error: error})
     })
 }
@@ -88,9 +124,18 @@ function readDeveloperByName(req, res) {
         }
     })
     .then( function(result) {
-        res.send('Success to Get Data by Name')
+        res.send({
+            success: true,
+            message: 'Success Get Data Developer by Name',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Get Data Developer by Name'
+        })
         res.json({error: error})
     })
 }
@@ -103,9 +148,18 @@ function readDeveloperBySkill(req, res) {
         }
     })
     .then( function(result) {
-        res.send('Success to Get Data by skill')
+        res.send({
+            success: true,
+            message: 'Success Get Data Developer by Skill',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Get Data Developer by Skill'
+        })
         res.json({error: error})
     })
 }
@@ -122,9 +176,18 @@ function sortDeveloperByRequest(req, res) {
         attributes: ['name']
     })
     .then( function(result) {
-        res.send('Success to Sort Data by Name')
+        res.send({
+            success: true,
+            message: 'Success Sort Data Developer by Name',
+            data: result
+        })
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
+        res.send({
+            success: false,
+            message: 'Failed to Sort Data Developer by Name'
+        })
         res.json({error: error})
     })
 }

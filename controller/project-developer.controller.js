@@ -14,7 +14,7 @@ function createProjectDeveloper(req, res) {
             message: 'Sucess Create Data Project Developer',
             data: result
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({
@@ -33,7 +33,7 @@ function readProjectDeveloper(req, res) {
             message: 'Sucess Get Data Project Developer',
             data: result
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({
@@ -61,7 +61,7 @@ function updateProjectDeveloper(req, res) {
             message: 'Success Update Data Project Developer',
             data: result
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({
@@ -84,7 +84,7 @@ function deleteProjectDeveloper(req, res) {
             message: 'Success Delete Data Project Developer',
             data: result
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({

@@ -15,7 +15,7 @@ function createProject(req, res) {
             message: 'Sucess Create Data Project',
             data: result
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({
@@ -33,7 +33,7 @@ function readProject(req, res) {
             message: 'Sucess Get Data Project',
             data: result
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({
@@ -61,7 +61,7 @@ function updateProject(req, res) {
             success: true,
             message: 'Sucess Update Data Project',
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({
@@ -82,7 +82,7 @@ function deleteProject(req, res) {
             success: true,
             message: 'Sucess Delete Data Project',
         })
-        res.json(result)
+        res.status(201).res.json(result)
     })
     .catch( function(error) {
         res.send({
