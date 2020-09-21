@@ -7,6 +7,7 @@ const project = require('../controller/project.controller')
 const projectDeveloper = require('../controller/project-developer.controller')
 const portfolio = require('../controller/portfolio.controller')
 const experience = require('../controller/experience.controller')
+const account = require('../controller/account.controller')
 
 
 // DEVELOPER
@@ -52,6 +53,12 @@ router.get('/experience', experience.readExperience)
 router.post('/experience', experience.createExperience)
 router.put('/experience/:id', experience.updateExperience)
 router.delete('/experience/:id', experience.deleteExperience)
+
+// ACCOUNT
+router.get('/account', account.readAccount)
+router.post('/account', account.createAccount)
+router.put('/account/:id', account.updateAccount)
+router.delete('/account/:id', account.deleteAccount)
 
 
 module.exports = router
