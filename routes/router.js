@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const auth = require('../middlewares/auth')
 
 const user = require('../controller/user.controller')
 const developer = require('../controller/developer.controller')
@@ -11,13 +12,13 @@ const account = require('../controller/account.controller')
 
 
 // USER
-router.post('/user/login', user.createUser) // Login
+router.post('/user/login', user.loginUser) // Login
 router.post('/user/register', user.createUser)      // Register
 
 
 router.get('/user', user.readUser)
-router.put('/user/:id', user.updateUser)
-router.delete('/user/:id', user.deleteUser)
+router.put('/user/:id', auth, user.updateUser)
+router.delete('/user/:id', auth, user.deleteUser)
 
 
 
