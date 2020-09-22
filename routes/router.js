@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
+const user = require('../controller/user.controller')
 const developer = require('../controller/developer.controller')
-const developers = require('./developer.router')
 const company = require('../controller/company.controller')
 const project = require('../controller/project.controller')
 const projectDeveloper = require('../controller/project-developer.controller')
@@ -10,16 +10,28 @@ const experience = require('../controller/experience.controller')
 const account = require('../controller/account.controller')
 
 
+// USER
+router.post('/user/login', user.createUser) // Login
+router.post('/user/register', user.createUser)      // Register
+
+
+router.get('/user', user.readUser)
+router.put('/user/:id', user.updateUser)
+router.delete('/user/:id', user.deleteUser)
+
+
+
+// router.use('/developers', developers)
+
 // DEVELOPER
-router.use('/developers', developers)
-router.get('/developer', developer.readDeveloper)                               // Read
-router.post('/developer', developer.createDeveloper)                            // Create
-router.put('/developer', developer.updateDeveloper)                             // Update
-router.delete('/developer', developer.deleteDeveloper)                          // Delete
-router.get('/developer', developer.readDeveloperByName)                         // getDatabyName
-router.get('/developer', developer.readDeveloperBySkill)                        // getDatabySkill
-router.get('/developer', developer.sortDeveloperByName)                         // sortDatabyName
-router.get('/developer', developer.sortDeveloperBySkill)                        // sortDatabySkill
+router.post('/developers', developer.createDeveloper)
+router.get('/developers', developer.readDeveloper)
+router.put('/developers/:id', developer.updateDeveloper)
+router.delete('/developers/:id', developer.deleteDeveloper)
+router.get('/developers/name/:name', developer.readDeveloperByName)
+router.get('/developers/skill/:skill', developer.readDeveloperBySkill)
+router.get('/developers/sortby/name/:name', developer.sortDeveloperByName)
+router.get('/developers/sortby/skill/:skill', developer.sortDeveloperBySkill)
 
 
 // COMPANY
