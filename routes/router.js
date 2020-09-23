@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const auth = require('../middlewares/auth')
-
 const user = require('../controller/user.controller')
 const developer = require('../controller/developer.controller')
 const company = require('../controller/company.controller')
@@ -12,17 +11,11 @@ const account = require('../controller/account.controller')
 
 
 // USER
-router.post('/user/login', user.loginUser) // Login
-router.post('/user/register', user.createUser)      // Register
-
-
+router.post('/user/login', user.loginUser)
+router.post('/user/register', user.createUser)
 router.get('/user', user.readUser)
 router.put('/user/:id', auth, user.updateUser)
 router.delete('/user/:id', auth, user.deleteUser)
-
-
-
-// router.use('/developers', developers)
 
 // DEVELOPER
 router.post('/developers', developer.createDeveloper)
@@ -34,12 +27,11 @@ router.get('/developers/skill/:skill', developer.readDeveloperBySkill)
 router.get('/developers/sortby/name/:name', developer.sortDeveloperByName)
 router.get('/developers/sortby/skill/:skill', developer.sortDeveloperBySkill)
 
-
 // COMPANY
-router.get('/companys', company.readCompany)            // Read
-router.post('/companys', company.createCompany)         // Create
-router.put('/companys/:id', company.updateCompany)      // Update
-router.delete('/companys/:id', company.deleteCompany)   // Delete
+router.get('/companys', company.readCompany)            
+router.post('/companys', company.createCompany)        
+router.put('/companys/:id', company.updateCompany)      
+router.delete('/companys/:id', company.deleteCompany)
 
 
 // PROJECT
