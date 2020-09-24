@@ -4,6 +4,8 @@ const router = require('./routes/router')
 const cors = require('cors')
 
 app.use(express.urlencoded({extended: true}))
+
+// CORS
 app.use(cors())
 app.all('/', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*")

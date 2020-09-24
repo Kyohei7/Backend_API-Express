@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const auth = require('../middlewares/auth')
+const uploadImage = require('../middlewares/multer')
 const user = require('../controller/user.controller')
+
 const developer = require('../controller/developer.controller')
 const company = require('../controller/company.controller')
 const project = require('../controller/project.controller')
@@ -8,7 +10,6 @@ const projectDeveloper = require('../controller/project-developer.controller')
 const portfolio = require('../controller/portfolio.controller')
 const experience = require('../controller/experience.controller')
 const account = require('../controller/account.controller')
-
 
 // USER
 router.post('/user/login', user.loginUser)
@@ -36,7 +37,7 @@ router.delete('/companys/:id', company.deleteCompany)
 
 // PROJECT
 router.get('/projects', project.readProject)
-router.post('/projects', project.createProject)
+router.post('/projects', auth, uploadImage, project.createProject)
 router.put('/projects/:id', project.updateProject)
 router.delete('/projects/:id', project.deleteProject)
 

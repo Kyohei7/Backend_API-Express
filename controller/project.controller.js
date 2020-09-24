@@ -2,12 +2,13 @@ const model = require('../models')
 
 
 function createProject(req, res) {
+    console.log(req.file) // check file
     model.Project.create({
         name: req.body.name,
         description: req.body.description,
         deadline: req.body.deadline,
         company: req.body.company,
-        photo: req.body.photo
+        photo: req.file.originalname
     })
     .then( function(result) {
         res.send({
