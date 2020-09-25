@@ -8,7 +8,7 @@ function createCompany(req, res) {
         description: req.body.description,
         instagram: req.body.instagram,
         linkedin: req.body.linkedin,
-        image: req.body.image,
+        photo: req.file.originalname,
         account: req.body.account
     })
     .then( function(result) {

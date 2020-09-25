@@ -18,7 +18,7 @@ router.put('/user/:id', auth, user.updateUser)
 router.delete('/user/:id', auth, user.deleteUser)
 
 // DEVELOPER
-router.post('/developers', developer.createDeveloper)
+router.post('/developers', uploadImage, developer.createDeveloper)
 router.get('/developers', developer.readDeveloper)
 router.put('/developers/:id', developer.updateDeveloper)
 router.delete('/developers/:id', developer.deleteDeveloper)
@@ -29,7 +29,7 @@ router.get('/developers/sortby/skill/:skill', developer.sortDeveloperBySkill)
 
 // COMPANY
 router.get('/companys', company.readCompany)            
-router.post('/companys', company.createCompany)        
+router.post('/companys', uploadImage, company.createCompany)        
 router.put('/companys/:id', company.updateCompany)      
 router.delete('/companys/:id', company.deleteCompany)
 
@@ -55,7 +55,7 @@ router.delete('/portfolio/:id', portfolio.deletePortfolio)
 
 // EXPERIENCE
 router.get('/experience', experience.readExperience)
-router.post('/experience', experience.createExperience)
+router.post('/experience', uploadImage, experience.createExperience)
 router.put('/experience/:id', experience.updateExperience)
 router.delete('/experience/:id', experience.deleteExperience)
 

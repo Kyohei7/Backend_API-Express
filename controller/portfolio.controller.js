@@ -8,7 +8,7 @@ function createPortfolio(req, res) {
         repository: req.body.repository,
         company: req.body.company,
         type: req.body.type,
-        photo: req.body.photo
+        photo: req.file.originalname
     })
     .then( function(result) {
         res.send({

@@ -6,7 +6,7 @@ function createExperience(req, res) {
         company: req.body.company,
         duration: req.body.duration,
         description: req.body.description,
-        icon: req.body.icon
+        photo: req.file.originalname
     })
     .then( function(result) {
         res.send({

@@ -4,7 +4,7 @@ const model = require('../models')
 function createDeveloper(req, res) {
     model.Developer.create({
         name: req.body.name,
-        photo: req.body.photo,
+        photo: req.file.originalname,
         job: req.body.job,
         location: req.body.location,
         status: req.body.status,
@@ -36,7 +36,10 @@ function createDeveloper(req, res) {
 
 // Read Data
 function readDeveloper(req, res) {
-    model.Developer.findAll()
+    model.Developer.findAll({
+        limit: 2,
+        offset: 1
+    })
     .then( function(result) {
         res.send({
             success: true,
