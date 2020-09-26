@@ -27,14 +27,21 @@ function createProject(req, res) {
     })
 }
 function readProject(req, res) {
-    model.Project.findAll()
-    .then( function(result) {
+
+    let page    = parseInt(req.query.page)
+    let limit   = parseInt(req.query.limit)
+
+    const offset = page ? page * limit : 0
+
+    model.Project.findAndCountAll({ limit: limit, offset: offset })
+    .then( data => {
+        const totalPages = Math.ceil(data.count / limit)
         res.send({
             success: true,
             message: 'Sucess Get Data Project',
-            data: result
+            data: data
         })
-        res.status(201).res.json(result)
+        res.status(201).res.json(data)
     })
     .catch( function(error) {
         res.send({

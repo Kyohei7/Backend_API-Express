@@ -4,7 +4,7 @@ const model = require('../models')
 function createDeveloper(req, res) {
     model.Developer.create({
         name: req.body.name,
-        photo: req.file.originalname,
+        photo: req.body.photo,
         job: req.body.job,
         location: req.body.location,
         status: req.body.status,
