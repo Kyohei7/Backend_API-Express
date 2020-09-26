@@ -5,7 +5,7 @@ const model = require('../models')
 module.exports = (req, res, next) => {
     let token = req.headers.token
     if(token) {
-        let verify = jwt.verify(token, 'rizki07')
+        let verify = jwt.verify(token, process.env.KEY)
         model.User.findOne({
             where: {
                 id: verify.id
