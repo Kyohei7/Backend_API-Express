@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Sep 2020 pada 14.23
+-- Waktu pembuatan: 30 Sep 2020 pada 13.28
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.2.33
 
@@ -36,19 +36,9 @@ CREATE TABLE `companies` (
   `instagram` varchar(255) DEFAULT NULL,
   `linkedin` varchar(255) DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
-  `account` varchar(255) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `companies`
---
-
-INSERT INTO `companies` (`id`, `name`, `sector`, `city`, `description`, `instagram`, `linkedin`, `photo`, `account`, `createdAt`, `updatedAt`) VALUES
-(2, 'Muhammad Rizki', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-09-21 01:10:31', '2020-09-21 01:10:31'),
-(3, 'Muhammad Rizki', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-09-21 01:11:43', '2020-09-21 01:11:43'),
-(4, 'Kyohei', 'Kyohei', 'Kyohei', 'Kyohei', 'Kyohei', 'Kyohei', 'a.png', 'Kyohei', '2020-09-25 13:02:27', '2020-09-25 13:02:27');
 
 -- --------------------------------------------------------
 
@@ -58,8 +48,8 @@ INSERT INTO `companies` (`id`, `name`, `sector`, `city`, `description`, `instagr
 
 CREATE TABLE `developers` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
   `photo` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
   `job` varchar(255) DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL,
   `status` varchar(255) DEFAULT NULL,
@@ -74,22 +64,6 @@ CREATE TABLE `developers` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `developers`
---
-
-INSERT INTO `developers` (`id`, `name`, `photo`, `job`, `location`, `status`, `description`, `skill`, `email`, `instagram`, `github`, `gitlab`, `portfolio`, `experience`, `createdAt`, `updatedAt`) VALUES
-(6, 'dina', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', '2020-09-18 05:57:50', '2020-09-18 05:57:50'),
-(7, 'dina', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'kamil', 'ayu', 'ayu', '2020-09-18 05:58:01', '2020-09-18 05:58:01'),
-(8, 'aska', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'kamil', 'ayu', 'ayu', '2020-09-18 05:58:12', '2020-09-18 05:58:12'),
-(9, 'bowo', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'kamil', 'ayu', 'ayu', '2020-09-18 05:58:18', '2020-09-18 05:58:18'),
-(10, 'setiawan', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'kamil', 'ayu', 'ayu', '2020-09-18 05:58:25', '2020-09-18 05:58:25'),
-(11, 'karyo', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'kamil', 'ayu', 'ayu', '2020-09-18 05:58:35', '2020-09-18 05:58:35'),
-(12, 'karyo', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'androiddeveloper', 'ayu', 'ayu', 'ayu', 'kamil', 'ayu', 'ayu', '2020-09-18 06:22:59', '2020-09-18 06:22:59'),
-(13, 'cantika', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'androiddeveloper', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', '2020-09-20 14:05:31', '2020-09-20 14:05:31'),
-(14, 'cantika', 'rizki', 'rizki', 'ayu', 'ayu', 'ayu', 'web developer', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', 'ayu', '2020-09-20 14:15:16', '2020-09-20 14:15:16'),
-(16, 'Muhammad Rizki', 'api.png', 'dummy', 'dummy', 'dummy', 'dummy', 'web developer', 'dummy', 'dummy', 'dummy', 'dummy', 'dummy', 'dummy', '2020-09-25 12:45:18', '2020-09-25 12:45:18');
 
 -- --------------------------------------------------------
 
@@ -107,17 +81,6 @@ CREATE TABLE `experiences` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data untuk tabel `experiences`
---
-
-INSERT INTO `experiences` (`id`, `position`, `company`, `duration`, `description`, `photo`, `createdAt`, `updatedAt`) VALUES
-(2, 'Android Developer', 'Telkom Indonesia', '5 Tahun', 'Lorem Lorem Lorem', NULL, '2020-09-25 11:55:37', '2020-09-25 11:55:37'),
-(3, 'Android Developer', 'Telkom Indonesia', '5 Tahun', 'Lorem Lorem Lorem', NULL, '2020-09-25 11:57:34', '2020-09-25 11:57:34'),
-(4, 'Android Developer', 'Telkom Indonesia', '5 Tahun', 'Lorem Lorem Lorem', NULL, '2020-09-25 11:59:20', '2020-09-25 11:59:20'),
-(5, 'Android Developer', 'Telkom Indonesia', '5 Tahun', 'Lorem Lorem Lorem', NULL, '2020-09-25 12:20:42', '2020-09-25 12:20:42'),
-(6, 'Android Developer', 'Telkom Indonesia', '5 Tahun', 'Lorem Lorem Lorem', 'negara.jpg', '2020-09-25 12:58:04', '2020-09-25 12:58:04');
 
 -- --------------------------------------------------------
 
@@ -137,6 +100,14 @@ CREATE TABLE `portfolios` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `portfolios`
+--
+
+INSERT INTO `portfolios` (`id`, `name`, `description`, `link`, `repository`, `company`, `type`, `photo`, `createdAt`, `updatedAt`) VALUES
+(2, 'Rizki Ganteng Banget', 'Aplikasi Keuangan Kelurahan', 'www.keuangankita.com', 'github.com/keuangankita', 'Tokopedia', 'Team', 'payload.png', '2020-09-30 05:20:11', '2020-09-30 05:35:19'),
+(3, 'Rizki Ganteng Banget', 'Aplikasi Keuangan Kelurahan', 'www.keuangankita.com', 'github.com/keuangankita', 'Tokopedia', 'Team', 'payload.png', '2020-09-30 09:48:21', '2020-09-30 09:48:43');
 
 -- --------------------------------------------------------
 
@@ -224,7 +195,12 @@ INSERT INTO `sequelizemeta` (`name`) VALUES
 ('20200921010307-create-account.js'),
 ('20200922131919-create-user.js'),
 ('20200925125416-rename-column-icon-to-photo-in-experiences.js'),
-('20200925125912-rename-column-image-to-photo-in-companies.js');
+('20200925125912-rename-column-image-to-photo-in-companies.js'),
+('20200929024529-create-portfolio.js'),
+('20200929031045-create-portfolio.js'),
+('20200930095504-create-experience.js'),
+('20200930102028-create-developer.js'),
+('20200930103825-create-company.js');
 
 -- --------------------------------------------------------
 
@@ -250,7 +226,9 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `createdAt`,
 (1, 'rizki07', 'rizkimuhammad2301@gmail.com', '$2a$10$bCvK.iEL4HwB0g9jeRpiwuj24t6h62c/9McG0NIzX9de0qIywAome', 'Developer', '2020-09-22 13:32:02', '2020-09-22 13:32:02'),
 (2, 'rizki07', 'rizkimuhammad2301@gmail.com', '$2a$10$i2p3re/3kfFk5kKpM4/hyOcj8Q37UvGX.yRRutjeOc.cj35nyjqmS', 'Developer', '2020-09-22 13:34:31', '2020-09-22 13:34:31'),
 (4, 'Muhammad Rizki', 'rizki@gmail.com', '$2a$10$OGbAZ4gGFMR0B80N4AxHlOsJMnMV2HlChYzf46UTqyEwcDO1lrJUO', 'Developer', '2020-09-24 12:09:00', '2020-09-24 12:09:00'),
-(5, 'Muhammad Rizki', 'agus@gmail.com', '$2a$10$5RKrBSO0kzf5EJimOvZ.BuEPHQ35mJ2rDV2qcoSbz3ogZPbljKDdy', 'Developer', '2020-09-26 12:03:40', '2020-09-26 12:03:40');
+(5, 'Muhammad Rizki', 'agus@gmail.com', '$2a$10$5RKrBSO0kzf5EJimOvZ.BuEPHQ35mJ2rDV2qcoSbz3ogZPbljKDdy', 'Developer', '2020-09-26 12:03:40', '2020-09-26 12:03:40'),
+(6, 'Muhammad Rizki', 'dina@gmail.com', '$2a$10$1h9C34nOrmniWAUlHj8sN.QplBgcw2MYZSKoxSgK9JnbLCh7JL6QW', 'Developer', '2020-09-26 12:50:03', '2020-09-26 12:50:03'),
+(8, 'ilham', 'ilham@gmail.com', '$2a$10$tmR36KZ7swYPJYuv/AOD/eViA62VJttEepwnJwzlTe2iFpOjkA2yS', 'Developer', '2020-09-28 11:58:23', '2020-09-28 11:58:23');
 
 --
 -- Indexes for dumped tables
@@ -313,43 +291,43 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `developers`
 --
 ALTER TABLE `developers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `experiences`
 --
 ALTER TABLE `experiences`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `portfolios`
 --
 ALTER TABLE `portfolios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `projectdevs`
 --
 ALTER TABLE `projectdevs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
