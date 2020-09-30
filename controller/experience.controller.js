@@ -1,6 +1,7 @@
 const model = require('../models')
 
 function createExperience(req, res) {
+    console.log(req.file)
     model.Experience.create({
         position: req.body.position,
         company: req.body.company,
@@ -48,7 +49,7 @@ function updateExperience(req, res) {
         company: req.body.company,
         duration: req.body.duration,
         description: req.body.description,
-        icon: req.body.icon
+        photo: req.file.originalname
     }, {
         where: {
             id: req.params.id
@@ -58,7 +59,6 @@ function updateExperience(req, res) {
         res.send({
             success: true,
             message: 'Success Update Data Experience',
-            data: result
         })
         res.status(201).res.json(result)
     })

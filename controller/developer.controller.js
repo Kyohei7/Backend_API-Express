@@ -3,8 +3,8 @@ const model = require('../models')
 // Create Data
 function createDeveloper(req, res) {
     model.Developer.create({
+        photo: req.file.originalname,
         name: req.body.name,
-        photo: req.body.photo,
         job: req.body.job,
         location: req.body.location,
         status: req.body.status,
@@ -36,10 +36,7 @@ function createDeveloper(req, res) {
 
 // Read Data
 function readDeveloper(req, res) {
-    model.Developer.findAll({
-        limit: 2,
-        offset: 1
-    })
+    model.Developer.findAll()
     .then( function(result) {
         res.send({
             success: true,
@@ -60,8 +57,8 @@ function readDeveloper(req, res) {
 // Update Data
 function updateDeveloper(req, res) {
     model.Developer.update({
+        photo: req.file.originalname,
         name: req.body.name,
-        photo: req.body.photo,
         job: req.body.job,
         location: req.body.location,
         status: req.body.status,
@@ -173,7 +170,7 @@ function sortDeveloperByName(req, res) {
         order: [
             ['name', 'ASC']
         ],
-        attributes: ['name', 'photo', 'job', 'location', 'status', 'description', 'skill', 'email', 'instagram', 'github', 'gitlab', 'portfolio', 'experience']
+        attributes: ['photo', 'name', 'job', 'location', 'status', 'description', 'skill', 'email', 'instagram', 'github', 'gitlab', 'portfolio', 'experience']
     })
     .then( function(result) {
         res.send({
@@ -198,7 +195,7 @@ function sortDeveloperBySkill(req, res) {
         order: [
             ['skill', 'DESC']
         ],
-        attributes: ['name', 'photo', 'job', 'location', 'status', 'description', 'skill', 'email', 'instagram', 'github', 'gitlab', 'portfolio', 'experience']
+        attributes: ['photo', 'name', 'job', 'location', 'status', 'description', 'skill', 'email', 'instagram', 'github', 'gitlab', 'portfolio', 'experience']
     })
     .then( function(result) {
         res.send({

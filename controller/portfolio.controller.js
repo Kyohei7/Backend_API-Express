@@ -1,6 +1,7 @@
 const model = require('../models')
 
 function createPortfolio(req, res) {
+    console.log(req.file)
     model.Portfolio.create({
         name: req.body.name,
         description: req.body.description,
@@ -52,7 +53,7 @@ function updatePortfolio(req, res) {
         repository: req.body.repository,
         company: req.body.company,
         type: req.body.type,
-        photo: req.body.photo
+        photo: req.file.originalname
     }, {
         where: {
             id: req.params.id
@@ -62,7 +63,6 @@ function updatePortfolio(req, res) {
         res.send({
             success: true,
             message: 'Success Update Data Portfolio',
-            data: result
         })
         res.status(201).res.json(result)
     })
@@ -96,7 +96,6 @@ function deletePortfolio(req, res) {
         res.json({error: error})
     })
 }
-
 
 module.exports = {
     createPortfolio,

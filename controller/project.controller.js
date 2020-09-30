@@ -58,7 +58,7 @@ function updateProject(req, res) {
         description: req.body.description,
         deadline: req.body.deadline,
         company: req.body.company,
-        photo: req.body.photo
+        photo: req.file.originalname
     }, {
         where: {
             id: req.params.id

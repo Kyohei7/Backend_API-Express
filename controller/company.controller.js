@@ -8,8 +8,7 @@ function createCompany(req, res) {
         description: req.body.description,
         instagram: req.body.instagram,
         linkedin: req.body.linkedin,
-        photo: req.file.originalname,
-        account: req.body.account
+        photo: req.file.originalname
     })
     .then( function(result) {
         res.send({
@@ -55,8 +54,7 @@ function updateCompany(req, res) {
         description: req.body.description,
         instagram: req.body.instagram,
         linkedin: req.body.linkedin,
-        image: req.body.image,
-        account: req.body.account
+        photo: req.file.originalname
     }, {
         where: {
             id: req.params.id

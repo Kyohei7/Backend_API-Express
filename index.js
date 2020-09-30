@@ -9,7 +9,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(cors())
 
 app.use('/', router)
-
+app.get('/', function (req, res) {
+    res.send('hello world')
+  })
 
 
 app.listen(5000, function() {

@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Developer.init({
-    name: DataTypes.STRING,
     photo: DataTypes.STRING,
+    name: DataTypes.STRING,
     job: DataTypes.STRING,
     location: DataTypes.STRING,
     status: DataTypes.STRING,
